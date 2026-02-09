@@ -4,6 +4,7 @@ The primairy goal that this project seeks to solve is the common issue of balanc
 ## Required Development Software
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Prettier - Code Formatter Extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+* [Git for Windows (Git Bash)](https://git-scm.com/install/windows)
 * [Node.js](https://nodejs.org/en/download)
 
 Once all are installed, execute the following in the repo's terminal:
