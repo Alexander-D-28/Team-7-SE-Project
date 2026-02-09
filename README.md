@@ -1,17 +1,12 @@
-# React + Vite
+# Housegold Budget Tracker
+The primairy goal that this project seeks to solve is the common issue of balancing a budget across a multi-roomate household. This project is designed to simplify this process into a basic interactive web application that combines budget tracking tools with both a wishlist feature and a financial summary that allows for easy planning and executing of financial decisions across a household.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Required Development Software
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Prettier - Code Formatter Extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+* [Node.js](https://nodejs.org/en/download)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
+Once all are installed, execute the following in the repo's terminal:
+```
+npm run dev
+```
