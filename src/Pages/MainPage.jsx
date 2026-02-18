@@ -10,7 +10,12 @@ function MainPage() {
     {id: 3, name: "Erik", total: 18.30},
   ]);
 
-  
+  //array for list of items
+  const [items, setItems] = useState([
+    {id: 0, name: "Item 1", quantity: 2},
+    {id: 1, name: "Item 2", quantity: 1},
+    {id: 2, name: "Item 3", quantity: 6}
+  ]);
 
   return (
     
@@ -70,17 +75,32 @@ function MainPage() {
 
           {/*Div for search bar and filter button*/}
           <div style={{marginTop: "15px", marginBottom: "10px"}}>
-            
               <input type="text" placeholder="Search..." style={{fontSize: "19px", border: "1px solid black"}}/>
               <button onClick={() => navigate("")} style={{fontSize: "13px", backgroundColor: 'white', color: 'black', border: "1px solid black", marginLeft: "10px"}}>
                 Filter
               </button>
-            
           </div>
 
           {/*Div for list of items*/}
-          <div>
+          <div style={{border: "2px solid black", padding: "15px", width: "367px", marginBottom: "15px"}}>
+            {items.map(item => (
+                <p key={item.id} style={{fontSize: "28px", color: "black"}}>
+                  {item.name}
 
+                  {/*mark as purchased button*/}
+                  <button style={{float: "right", fontSize: "8px", border: "1px solid black", marginLeft: "3px"}}>
+                    Purchased
+                  </button>
+
+                  {/*quantity input*/}
+                  <input type="number" style={{width: "30px", float: "right"}}/>
+
+                  {/*delete button*/}
+                  <button style={{float: "right", fontSize: "8px", border: "1px solid black", marginRight: "3px"}}>
+                    Delete
+                  </button>
+                </p>
+              ))}
           </div>
         </div>
       </div>
