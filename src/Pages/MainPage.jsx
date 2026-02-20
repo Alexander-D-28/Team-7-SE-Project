@@ -4,17 +4,6 @@ import { useNavigate } from "react-router-dom";
 function MainPage( {people} ) {
 
   const navigate = useNavigate();
-
-  //Removes a person from our people array
-  const removePerson = () => {
-    
-  };
-
-  //Edits a person from our people array
-  const editPerson = () => {
-
-  }
-
   
   //array for list of items
   const [items, setItems] = useState([
@@ -56,10 +45,10 @@ function MainPage( {people} ) {
             <button onClick={() => navigate("/add-person")} style={{backgroundColor: 'black', color: 'greenyellow'}}>
               +
             </button>
-            <button onClick={removePerson} style={{backgroundColor: 'black', color: 'red'}}>
+            <button onClick={() => navigate("/remove-person")} style={{backgroundColor: 'black', color: 'red'}}>
               -
             </button>
-            <button onClick={editPerson} style={{backgroundColor: 'black', color: 'white'}}>
+            <button onClick={() => navigate("/edit-person")} style={{backgroundColor: 'black', color: 'white'}}>
               Edit Person
             </button>
           </div>

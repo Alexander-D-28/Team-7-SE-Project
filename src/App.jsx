@@ -4,6 +4,8 @@ import Page1 from "./Page1";
 import MainPage from "./Pages/MainPage";
 import TransactionPage from "./Pages/TransactionPage";
 import AddPerson from "./Buttons/AddPerson";
+import RemovePerson from "./Buttons/RemovePerson";
+import EditPerson from "./Buttons/EditPerson";
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
       <Route path="/main" element={<MainPage people={people} />} />
       <Route path="/transaction" element={<TransactionPage />} />
       <Route path="/add-person" element={<AddPerson people={people} setPeople={setPeople} />} />
+      <Route path="remove-person" element={<RemovePerson/>} />
+      <Route path="edit-person" element={<EditPerson />} />
     </Routes>
   );
 }
