@@ -45,9 +45,11 @@ function MainPage( {people} ) {
             <button onClick={() => navigate("/add-person")} style={{backgroundColor: 'black', color: 'greenyellow'}}>
               +
             </button>
+            {/*Routes to RemovePerson page to peform function of removing a person*/}
             <button onClick={() => navigate("/remove-person")} style={{backgroundColor: 'black', color: 'red'}}>
               -
             </button>
+            {/*Routes to EditPerson page to peform function of editing a person*/}
             <button onClick={() => navigate("/edit-person")} style={{backgroundColor: 'black', color: 'white'}}>
               Edit Person
             </button>
