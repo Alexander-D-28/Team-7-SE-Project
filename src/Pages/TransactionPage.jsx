@@ -1,5 +1,6 @@
 function TransactionPage() {
 
+  //Array of tansactions
   const transactions = [
     { id: 1, text: "Carter — 6 rolls of toilet paper — $5.99" },
     { id: 2, text: "Carter — Dish soap — $4.50" },
@@ -29,7 +30,7 @@ function TransactionPage() {
           backgroundColor: "#cec0b6"
         }}
       >
-        {/*Map transactions to log*/}
+        {/*pull transactions from array and map to log*/}
         {transactions.map(t => (
           <p
             key={t.id}
