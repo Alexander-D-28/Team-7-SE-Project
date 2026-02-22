@@ -1,9 +1,22 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './App.css'
 
 function Page1() {
 
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  // Login function, checks for hardcoded username and password. admin password123
+  const handleLogin = () => {
+    if (username === "admin" && password === "password123") {
+      navigate("/main");
+    } else {
+      setError("Invalid username or password");
+    }
+  };
 
   return (
     <>
@@ -14,9 +27,10 @@ function Page1() {
         {/*The container for Login functions*/}
         <div style={{ background: "white", padding: "48px", width: "340px", borderRadius: "8px", boxShadow: "0 2px 12px rgba(0,0,0,0.1)" }}>
           <h2 style={{ textAlign: "center", marginBottom: "24px", color: "black" }}>Login</h2>
-          <input type="text" placeholder="Username" style={{ width: "92%", padding: "12px", marginBottom: "12px", borderRadius: "4px", border: "1px solid #ccc" }} />
-          <input type="password" placeholder="Password" style={{ width: "92%", padding: "12px", marginBottom: "12px", borderRadius: "4px", border: "1px solid #ccc" }} />
-          <button style={{ width: "100%", padding: "12px", backgroundColor: "black", color: "white", border: "none", borderRadius: "4px", cursor: "pointer" }}>
+          <input type="text" placeholder="Username" value={username} onChange={(e) => { setUsername(e.target.value); setError(""); }} style={{ width: "92%", padding: "12px", marginBottom: "12px", borderRadius: "4px", border: "1px solid #ccc" }} />
+          <input type="password" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value); setError(""); }} style={{ width: "92%", padding: "12px", marginBottom: "12px", borderRadius: "4px", border: "1px solid #ccc" }} />
+          {error && <p style={{ color: "red", fontSize: "14px", margin: "0 0 12px 0" }}>{error}</p>}
+          <button onClick={handleLogin} style={{ width: "100%", padding: "12px", backgroundColor: "black", color: "white", border: "none", borderRadius: "4px", cursor: "pointer" }}>
             Login
           </button>
         </div>
