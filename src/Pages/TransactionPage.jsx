@@ -52,41 +52,45 @@ function TransactionPage() {
         ))}
       </div>
 
-            {/*Main Page button*/}
-      <button
-        onClick={() => navigate("/main")}
-        style={{
-          marginTop: "20px",
-          padding: "8px 16px",
-          backgroundColor: "navy",
-          color: "white",
-          border: "none",
-          borderRadius: "4px",
-          cursor: "pointer",
-          fontSize: "14px"
-        }}
-      >
-        Main Page
-      </button>
+      {/* Routing button container div*/}
+      <div style={{ display: "flex", gap: "7px" }}>
 
-      {/*Logout button*/}
-      <button
-        onClick={() => navigate("/")}
-        style={{
-          marginTop: "20px",
-          padding: "8px 16px",
-          backgroundColor: "black",
-          color: "white",
-          border: "none",
-          borderRadius: "4px",
-          cursor: "pointer",
-          fontSize: "14px"
-        }}
-      >
-        Logout
-      </button>
+        {/*Main Page button*/}
+        <button
+          onClick={() => navigate("/main")}
+          style={{
+            marginTop: "20px",
+            padding: "8px 16px",
+            backgroundColor: "navy",
+            color: "white",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "14px"
+          }}
+        >
+          Main Page
+        </button>
 
-      
+        {/*Logout button*/}
+        <button
+          onClick={() => navigate("/")}
+          style={{
+            marginTop: "20px",
+            padding: "8px 16px",
+            backgroundColor: "black",
+            color: "white",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "14px"
+          }}
+        >
+          Logout
+        </button>
+      </div>
+
+
     </div>
   );
 }

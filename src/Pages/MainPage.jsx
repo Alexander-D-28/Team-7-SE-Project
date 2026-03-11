@@ -164,39 +164,43 @@ function MainPage({ people, setPeople }) {
           {showPurchased && selectedItem && (<Purchased item={selectedItem} markPurchased={markPurchased} closePopup={() => setShowPurchased(false)} />)}
         </div>
 
-        {/*Transaction Page button*/}
-        <button
-          onClick={() => navigate("/transaction")}
-          style={{
-            marginTop: "20px",
-            padding: "8px 16px",
-            backgroundColor: "navy",
-            color: "white",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-            fontSize: "14px"
-          }}
-        >
-          Transactions
-        </button>
+        {/* Routing button container div*/}
+        <div style={{ display: "flex", gap: "7px" }}>
 
-        {/*Logout button*/}
-        <button
-          onClick={() => navigate("/")}
-          style={{
-            marginTop: "20px",
-            padding: "8px 16px",
-            backgroundColor: "black",
-            color: "white",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-            fontSize: "14px"
-          }}
-        >
-          Logout
-        </button>
+          {/*Transaction Page button*/}
+          <button
+            onClick={() => navigate("/transaction")}
+            style={{
+              marginTop: "20px",
+              padding: "8px 16px",
+              backgroundColor: "navy",
+              color: "white",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+              fontSize: "14px"
+            }}
+          >
+            Transactions
+          </button>
+
+          {/*Logout button*/}
+          <button
+            onClick={() => navigate("/")}
+            style={{
+              marginTop: "20px",
+              padding: "8px 16px",
+              backgroundColor: "black",
+              color: "white",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+              fontSize: "14px"
+            }}
+          >
+            Logout
+          </button>
+        </div>
 
       </div>
     </>
