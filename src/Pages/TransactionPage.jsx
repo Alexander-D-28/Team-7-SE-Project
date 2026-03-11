@@ -68,6 +68,25 @@ function TransactionPage() {
       >
         Logout
       </button>
+
+      {/*Main Page button*/}
+      <button
+        onClick={() => navigate("/main")}
+        style={{
+          marginTop: "20px",
+          padding: "8px 16px",
+          backgroundColor: "navy",
+          color: "white",
+          border: "none",
+          borderRadius: "4px",
+          cursor: "pointer",
+          fontSize: "14px"
+        }}
+      >
+        Main Page
+      </button>
+
+      
     </div>
   );
 }
