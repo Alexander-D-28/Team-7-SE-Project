@@ -126,10 +126,10 @@ function MainPage({ people, setPeople }) {
             <span style={{ fontSize: "54px", fontWeight: "bold", marginRight: "20px", color: "black" }}>
               Items to Buy:
             </span>
-            <button onClick={() => setShowAddItem(true)} style={{backgroundColor: "black", color: "lightblue"}}>
+            <button onClick={() => setShowAddItem(true)} style={{ backgroundColor: "black", color: "lightblue" }}>
               +
             </button>
-            {showAddItem  && (<AddItem addItem={addItem} closePopup={() => setShowAddItem(false)}/>)}
+            {showAddItem && (<AddItem addItem={addItem} closePopup={() => setShowAddItem(false)} />)}
           </div>
 
           {/*Div for search bar and filter button*/}
@@ -147,12 +147,12 @@ function MainPage({ people, setPeople }) {
                 {item.name}: ${item.price}
 
                 {/*mark as purchased button*/}
-                <button onClick={() => {setSelectedItem(item); setShowPurchased(true);}} style={{ float: "right", fontSize: "8px", border: "1px solid black", marginLeft: "3px" }}>
+                <button onClick={() => { setSelectedItem(item); setShowPurchased(true); }} style={{ float: "right", fontSize: "8px", border: "1px solid black", marginLeft: "3px" }}>
                   Purchased
                 </button>
 
                 {/*quantity input*/}
-                <input type="number" value={item.quantity} min="1" max="99" step="1" style={{ width: "30px", float: "right"}} />
+                <input type="number" value={item.quantity} min="1" max="99" step="1" style={{ width: "30px", float: "right" }} />
 
                 {/*delete button*/}
                 <button onClick={() => deleteItem(item.id)} style={{ float: "right", fontSize: "8px", border: "1px solid black", marginRight: "3px" }}>
@@ -161,8 +161,25 @@ function MainPage({ people, setPeople }) {
               </p>
             ))}
           </div>
-          {showPurchased && selectedItem && (<Purchased item={selectedItem} markPurchased={markPurchased} closePopup={() => setShowPurchased(false)}/>)}
+          {showPurchased && selectedItem && (<Purchased item={selectedItem} markPurchased={markPurchased} closePopup={() => setShowPurchased(false)} />)}
         </div>
+
+        {/*Transaction Page button*/}
+        <button
+          onClick={() => navigate("/main")}
+          style={{
+            marginTop: "20px",
+            padding: "8px 16px",
+            backgroundColor: "navy",
+            color: "white",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "14px"
+          }}
+        >
+          Transactions
+        </button>
 
         {/*Logout button*/}
         <button
