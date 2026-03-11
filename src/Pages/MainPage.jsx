@@ -166,7 +166,7 @@ function MainPage({ people, setPeople }) {
 
         {/*Transaction Page button*/}
         <button
-          onClick={() => navigate("/main")}
+          onClick={() => navigate("/transaction")}
           style={{
             marginTop: "20px",
             padding: "8px 16px",
