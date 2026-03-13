@@ -13,6 +13,7 @@ function MainPage({ people, setPeople }) {
   const [showAddItem, setShowAddItem] = useState(false);
   const [showPurchased, setShowPurchased] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [personSearch, setPersonSearch] = useState("");
 
   //array for list of items
   const [items, setItems] = useState([
@@ -67,14 +68,30 @@ function MainPage({ people, setPeople }) {
         {/*Upper half of main page div*/}
         <div style={{ textAlign: "left" }}>
           {/*Displays text "Person: Total Spent"*/}
-          <p style={{ fontSize: '48px', fontWeight: "bold", color: "black" }}>
+          <p style={{ fontSize: '48px', fontWeight: "bold", color: "black", marginBottm: '10px' }}>
             Person: Total Spent
           </p>
+          {/*Div for search bar and filter button*/}
+          <div style={{ marginTop: "15px", marginBottom: "10px" }}>
+            <input
+              type="text" placeholder="Search..."
+              value={personSearch}
+              onChange={(e) => setPersonSearch(e.target.value)}
+              style={{ fontSize: "19px", border: "1px solid black" }} 
+            />
+            <button onClick={() => navigate("")} style={{ fontSize: "13px", backgroundColor: 'white', color: 'black', border: "1px solid black", marginLeft: "10px" }}>
+              Filter
+            </button>
+          </div>
           {/*Div that displays names with money spent in format Name: $*/}
           <div style={{ border: "2px solid black", padding: "15px", width: "367px", marginBottom: "15px" }}>
             {/*Div that displays the entire array of people*/}
             <div>
-              {people.map(person => (
+              {people
+              .filter(person =>
+                person.name.toLowerCase().startsWith(personSearch.toLowerCase())
+              )
+              .map(person => (
                 <p key={person.id} style={{ fontSize: "28px" }}>
                   {person.name}: ${person.total}
                 </p>
@@ -123,7 +140,7 @@ function MainPage({ people, setPeople }) {
         <div style={{ textAlign: "left", marginTop: "50px" }}>
           {/*Div for title text and 'add item' button*/}
           <div>
-            <span style={{ fontSize: "54px", fontWeight: "bold", marginRight: "20px", color: "black" }}>
+            <span style={{ fontSize: "54px", fontWeight: "bold", marginRight: "20px", color: "black", marginBottom: '10px' }}>
               Items to Buy:
             </span>
             <button onClick={() => setShowAddItem(true)} style={{ backgroundColor: "black", color: "lightblue" }}>
