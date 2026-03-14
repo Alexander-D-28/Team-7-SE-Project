@@ -16,6 +16,7 @@ function MainPage({ people, setPeople }) {
   const [selectedItem, setSelectedItem] = useState(null);
   const [personSearch, setPersonSearch] = useState("");
   const [showEditPerson, setShowEditPerson] = useState(false);
+  const [itemSearch, setItemSearch] = useState("");
 
   //array for list of items
   const [items, setItems] = useState([
@@ -161,15 +162,17 @@ function MainPage({ people, setPeople }) {
 
           {/*Div for search bar and filter button*/}
           <div style={{ marginTop: "15px", marginBottom: "10px" }}>
-            <input type="text" placeholder="Search..." style={{ fontSize: "19px", border: "1px solid black" }} />
-            <button onClick={() => navigate("")} style={{ fontSize: "13px", backgroundColor: 'white', color: 'black', border: "1px solid black", marginLeft: "10px" }}>
+            <input type="text" placeholder="Search..." value={itemSearch} 
+              onChange={(e) => setItemSearch(e.target.value)} style={{ fontSize: "19px", border: "1px solid black" }} />
+            <button onClick={() => navigate("")} 
+              style={{ fontSize: "13px", backgroundColor: 'white', color: 'black', border: "1px solid black", marginLeft: "10px" }}>
               Filter
             </button>
           </div>
 
           {/*Div for list of items*/}
           <div style={{ border: "2px solid black", padding: "15px", width: "367px", marginBottom: "15px" }}>
-            {items.map(item => (
+            {items.filter(item => item.name.toLowerCase().startsWith(itemSearch.toLowerCase())).map(item => (
               <p key={item.id} style={{ fontSize: "28px", color: "black" }}>
                 {item.name}: ${item.price}
 
