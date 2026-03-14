@@ -4,6 +4,7 @@ import AddPerson from "../Buttons/AddPerson";
 import RemovePerson from "../Buttons/RemovePerson";
 import AddItem from "../Buttons/AddItem";
 import Purchased from "../Buttons/Purchased";
+import EditPerson from "../Buttons/EditPerson";
 
 function MainPage({ people, setPeople }) {
 
@@ -14,6 +15,7 @@ function MainPage({ people, setPeople }) {
   const [showPurchased, setShowPurchased] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [personSearch, setPersonSearch] = useState("");
+  const [showEditPerson, setShowEditPerson] = useState(false);
 
   //array for list of items
   const [items, setItems] = useState([
@@ -125,9 +127,17 @@ function MainPage({ people, setPeople }) {
               />
             )}
             {/*Routes to EditPerson page to peform function of editing a person*/}
-            <button onClick={() => navigate("/edit-person")} style={{ backgroundColor: 'black', color: 'white' }}>
+            <button onClick={() => setShowEditPerson(true)} style={{ backgroundColor: 'black', color: 'white' }}>
               Edit Person
             </button>
+            {/*Pop up edit person*/}
+            {showEditPerson && (
+              <EditPerson
+                people={people}
+                setPeople={setPeople}
+                closePopup={() => setShowEditPerson(false)}
+              />
+            )}
           </div>
 
         </div>
