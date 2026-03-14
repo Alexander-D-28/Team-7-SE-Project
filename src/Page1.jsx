@@ -25,7 +25,7 @@ function Page1() {
     <>
       <div>
 
-      <pre style={{ textAlign: "center"}}>
+      <pre style={{ textAlign: "center",fontWeight: "bold",fontSize: "18px"}}>
         {`___________
 /            \\
 /              \\
